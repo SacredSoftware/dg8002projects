@@ -1,6 +1,140 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html> 
+<head>
+    <title> Tutorial_290126_page </title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
+    <meta name="keywords" content="html" />
+    <link rel="stylesheet" type="text/css" href="Assignment1_CSSDOC.css">
+</head>
+
 <body>
-    <h1>~ hello world ~</h1>
+    <div id="pageheader">
+        <h1 id="headertext">A Brief Guide to Displacement Mapping</h1>
+    </div>
+    <div id="pagesection1">
+        <div class="pagesection1sub1"> 
+            <video id="displacementvideo" height="570" autoplay loop muted src="Displacement_Polygon_Loop_Square.mp4" type="video/mp4"></video>  
+            <div id="displacementgenerators">
+                <h2>Displacement Generators</h2>
+                <div class="generatortags">
+                    <h2>A</h2>
+                    <video class="displacementgeneratorvid" width="30%" height="40%" autoplay loop muted src="Displacement_Generator_LoopA.mp4" type="mp4"></video>
+                    <h2>B</h2>
+                    <video class="displacementgeneratorvid" width="30%" height="40%" autoplay loop muted src="Displacement_Generator_LoopB.mp4" type="mp4"></video>
+                </div>
+            </div>
+        </div>
+        <div class="pagesection1sub1">
+            <div class="pagesection1sub2">
+                <p class="paragraphtext">
+                    Displacement mapping is a computer graphics technique that uses a texture or heightmap to alter the geometric position of points over the surface of an object.
+                    This 'displacement' of the object's surface creates an additional sense of depth and detail, allowng for self-occlusion, self-shadowing and silhouettes. 
+                    The specfics of the surface gemoetry are calculated through a texture function, which uses the pixel values of the provided texture map, as well as any additional parameters to map geometrical changes in 3d space.
+                    While powerful, displacement mapping is the most costly type of mapping technique due to the large amount of additional geometry that must be cacluated. 
+                </p>
+                <h2> Displacement Maps are Used In</h2>
+                <ul class="unorderedlist">
+                    <li class="paragraphtext">3d modeling & animation</li>
+                    <li class="paragraphtext">video game design</li>
+                    <li class="paragraphtext">visual effects</li>
+                    <li class="paragraphtext">architectural visualization</li>
+                    <li class="paragraphtext">scientific visualization</li>
+                    <li class="paragraphtext">and more!</li>
+                </ul>
+                <h2> Tools For Displacement Mapping</h2>
+                <div class="pagesection1sub3">
+                        <table id="table_displacementtools">
+                            <tr class="paragraphtext">
+                                <td style="width: 20%;"><strong>Texture Creation</strong></td>
+                                <td style="width: 50%"> Image manipulation programs can be used to create 2D textures that inform displacement data</td>
+                                <td style="width: 35%;">
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Adobe_Photoshop_CC_2026_icon.svg/1280px-Adobe_Photoshop_CC_2026_icon.svg.png" width="30%">
+                                    <img src="https://www.onworks.net/imagescropped/awesomebumpicon.png_3.webp" width="30%">
+                                </td>
+                            </tr>
+                            <tr class="paragraphtext">
+                                <td><strong>3d<br>Modelling</strong></td>
+                                <td>3d modelling software allows you to create 3d models, map 2d textures to their geometry and apply 3d displacement transformations</td>
+                                <td>
+                                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Blender_logo_no_text.svg/960px-Blender_logo_no_text.svg.png" width="30%">
+                                    <img src="https://images.seeklogo.com/logo-png/15/1/zbrush-logo-png_seeklogo-155828.png" width="30%">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNDXn3oWjjYsdSdW2R2DfsZcNl_2LN9wcRqg&s" width="30%">
+                                </td>
+                            </tr>
+                            <tr class="paragraphtext">
+                                <td><strong>Realtime Engines & Rendering</strong></td>
+                                <td>Rendering engines allow you to convert displaced 3d models into videos and other formats for wider use</td>
+                                <td>
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuEZyk8kjIdQNfoPdFSqVBPwfGeq159tYPoA&s" width="30%">
+                                    <img src="https://upload.wikimedia.org/wikipedia/fr/2/23/Octane_Render.png" width="30%">
+                                </td>
+                            </tr>
+                        </table>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div id="pagesection2">
+       <div class="pagesection2sub1">
+            <h2 class="subheadtext"> How Displacement Mapping Works</h2>
+       </div>
+        <div class="pagesection2sub1">
+                <div class="pagesection2sub2">
+                    <div class="pagesection2sub3">
+                        <p><strong>Step 1:<br>Generate Texture</strong></p>
+                        <img id="displacementtexture" src="Noise_Pattern_Image.png" width="250">
+                        <p class="paragraphtext">Using an image editing software, create a pattern where each individual pixel is given a greyscale RGB value ranging from black to white. The pattern can be randomized or calibrated using an exisitng 'heightmap' that converts height data into pixel values.</p>
+                    </div>
+                    <div class="triangle-right"></div>
+                    <div class="pagesection2sub3">
+                        <p><strong>Step 2:<br>Apply Texture to Object</strong></p>
+                        <video class="displacementprocessasset" width="250" autoplay loop muted src="DisplacementProcess_Loop1.mp4"></video>
+                        <p class="paragraphtext">In your prefered 3d modelling software, create a 3d object and corresponding 'material' that dictates how the surface of the object appears. Under the material parameters, assign your generated texture as the material's 'displacement map/heightmap'.</p>
+                    </div>
+                    <div class="triangle-right"></div>
+                    <div class="pagesection2sub3">
+                        <p><strong>Step 3:<br>Create Displacement</strong></p>
+                        <video class="displacementprocessasset" width="250" autoplay loop muted src="DisplacementProcess_Loop2.mp4"></video>
+                        <p class="paragraphtext">Adjust your material's displacement/heightmap parameters to transform your object's surface geometry. Your transformatons will scale based on the colour of your texture - where the more white a pixel is, the more that section of the surface will be displaced.</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <div id="pagesection3">
+       <div class="pagesection3sub1">
+            <h2 class="subheadtext"> Additional Resources</h2>
+       </div>
+        <div class="pagesection3sub1">
+            <table id="table_additionalresources">
+                <tr>
+                    <td><a class="hyperlink" href="https://en.wikipedia.org/wiki/Displacement_mapping"><strong>Wikipedia's Displacement Mapping Article</strong></a></td>
+                    <td class="paragraphtext">Wikipedia's article on displacement mapping offers a comprehensive overview of the technique as well as it's history and technical applications across different types of renderers. </td>
+                </tr>
+                <tr>
+                    <td><a class="hyperlink" href="https://docs.blender.org/manual/en/latest/render/materials/components/displacement.html"><strong>Blender's Displacement Guide</strong></a></td>
+                    <td class="paragraphtext">The displacement section of Blender's user manual shows how displacement maps can be applied to 3d objects through its material features. The guide also highlights the difference between bump mapping and true displacement.</td>
+                </tr>
+                <tr>
+                    <td><a class="hyperlink" href="https://www.youtube.com/watch?v=KH_o4KcsVyA"><strong>Explainer: Bump, Normal and Displacement Maps</strong></a></td>
+                    <td class="paragraphtext">This brief explainer video covers the difference between bump, normal and displacment maps - outlining the different ways each map affects the surface of 3d geometry.</td>
+                </tr>
+                <tr>
+                    <td><a class="hyperlink" href="https://www.artstation.com/blogs/sefki_i/vzvG/the-digital-human-project-displacement-map"><strong>Displacement Maps for Digital Humans</strong></a></td>
+                    <td class="paragraphtext">Sefki Ibrahim's Artstation post covers how they use displacement maps to create realistic skin textures for digital human models. The post offers a detailed, step by step overview of how the displacement maps were created, applied, and refined through further scuplting.</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+        <div id="pagesection4">
+       <div class="pagesection4sub1">
+            <h2 class="subheadtext">Sources</h2>
+       </div>
+        <div class="pagesection4sub1">
+            <ol>
+                <li class="paragraphtext">Wikimedia Foundation. (2025, February 18). Displacement mapping. Wikipedia. https://en.wikipedia.org/wiki/Displacement_mapping</li>
+                <li class="paragraphtext">Adobe. (n.d.). What is displacement mapping?. Adobe Learn & Support. https://www.adobe.com/products/substance3d/discover/what-is-displacement-mapping.html</li>
+                <li class="paragraphtext">Wikimedia Foundation. (2025b, August 7). Heightmap. Wikipedia. https://en.wikipedia.org/wiki/Heightmap</li>
+            </ol>
+        </div>
+    </div>
 </body>
-</html>
